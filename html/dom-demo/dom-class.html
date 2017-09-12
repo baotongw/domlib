@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>QDJ Dom Class Demo</title>
+    <style>
+        .hide {visibility: hidden;}
+        .division {margin-top: 10px; border-top: 1px dotted #666;}
+    </style>
+    <script src="../../dist/dev/qdj.js"></script>
+</head>
+<body>
+    <header>
+        Header - QDJ Dom Operation Library Test
+    </header>
+    <div class="container">
+        <ul id="list">
+            <li>list 1</li>
+            <li>list 2</li>
+            <li>list 3</li>
+        </ul>
+    </div>
+    <footer>This is footer</footer>
+    <p>
+        <button id="show">显示header</button>
+        <button id="hide">隐藏header</button>
+        <button id="toggle">切换header</button>
+    </p>
+    <script>
+        let $header = Q('header')
+        let $show = Q('#show')
+        let $hide = Q('#hide')
+        let $toggle = Q('#toggle')
+
+        $show[0].addEventListener('click', e => {
+            $header.removeClass('hide')
+        }, false)
+
+        $hide[0].addEventListener('click', e => {
+            $header.addClass('hide')
+        }, false)
+
+        $toggle[0].addEventListener('click', e => {
+            $header.toggleClass('hide')
+        }, false)
+    </script>
+    <br>
+    <div class="division"></div>
+    <p id="attr">You can edit my tag attribute</p>
+    <p id="attrOutput"></p>
+    <p>
+        <button id="addAttr">添加属性</button>
+        <button id="getAttr">获取属性</button>
+        <button id="removeAttr">删除属性</button>
+    </p>
+    <script>
+        let $attr = Q('#attr')
+        let $attrOutput = Q('#attrOutput')
+        let $addAttr = Q('#addAttr')
+        let $getAttr = Q('#getAttr')
+        let $removeAttr = Q('#removeAttr')
+        let $
+
+        $addAttr[0].addEventListener('click', e => {
+            $attr.attr('data-attr', 'baotong.wang')
+            $attr.attr({
+                age: 18,
+                isMale: true,
+                favorite: 'soccor'
+            })
+        }, false)
+
+        $getAttr[0].addEventListener('click', e => {
+            let age = $attr.attr('age')
+            let name = $attr.attr('data-attr')
+            let favorite = $attr.attr('favorite')
+            let content = `${name}--${age}--${favorite}`
+
+            $attrOutput[0].innerHTML = content
+        }, false)
+
+        $removeAttr[0].addEventListener('click', e => {
+            $attr.removeAttr('age isMale favorite')
+        }, false)
+    </script>
+    <br>
+    <div class="division"></div>
+    <form>
+        <input type="radio" name="sex" value="male" />男
+        <br>
+        <input type="radio" name="sex" value="famale" />女
+        <br>
+        <input type="checkbox" name="type" value="freetrip">自由行
+        <br>
+        <input type="checkbox" name="type" value="group">跟团游
+        <br>
+        <input type="checkbox" name="type" value="visa">签证
+        <br>       
+    </form>
+    <p id="propOutput"></p>
+    <p>
+        <button id="addProp">设置选中</button>
+        <button id="removeProp">取消选中</button>
+    </p>
+    <script>
+        let $inputs = Q('form input')
+        let $propOutput = Q('#propOutput')
+        let $addProp = Q('#addProp')
+        let $removeProp = Q('#removeProp')
+
+        let index = 0
+        $addProp[0].addEventListener('click', e => {
+            $inputs.prop('checked', true)
+        })
+
+        $removeProp[0].addEventListener('click', e => {
+            $inputs.prop('checked', false)
+        })
+    </script>    
+    <br>
+    <div class="division"></div>
+    <form id="form-user">
+        <div>
+            <input type="text" name="username" id="uname" />
+        </div>
+        <div>
+            <textarea name="content" id="content" cols="50" rows="5"></textarea>
+        </div>
+        <div>
+            <select name="level" id="level" multiple>
+                <option value="1">Junior</option>
+                <option value="2">Secondary</option>
+                <option value="3">Senior</option>
+            </select>
+        </div>
+    </form>
+    <script>
+        let $uname = Q('#uname')
+        let $content = Q('#content')
+        let $level = Q('#level')
+        debugger
+        console.log('---- category 4 ----')
+        $uname.val('baotong.wang')
+        console.log($uname.val())
+
+        $content.val('long paragraph')
+        console.log($content.val())
+
+        $level.val(2)
+        console.log($level.val())
+    </script>
+</body>
+</html>

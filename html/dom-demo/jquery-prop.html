@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery Class Demo</title>
+    <style>
+        .hide {visibility: hidden;}
+        .division {margin-top: 10px; border-top: 1px dotted #666;}
+    </style>
+</head>
+<body>
+    <header>
+        Header - QDJ Dom Operation Library Test
+    </header>
+    <form>
+        <input type="radio" name="sex" value="male" />男
+        <br>
+        <input type="radio" name="sex" value="famale" />女
+    </form>
+    <form>
+        <input type="checkbox" name="type" value="freetrip">自由行
+        <br>
+        <input type="checkbox" name="type" value="group">跟团游
+        <br>
+        <input type="checkbox" name="type" value="visa">签证
+    </form>
+    <p>
+        <button id="addAttr">设置属性</button>
+        <!-- <button id="getAttr">获取属性</button>
+        <button id="removeAttr">删除属性</button> -->
+    </p>
+    <script src="../../vendor/jquery-3.2.1.js"></script>
+    <script>
+        let $addAttr = $('#addAttr')
+        let $getAttr = $('#getAttr')
+        let $removeAttr = $('#removeAttr')
+        let $checkboxs = $(':checkbox')
+
+        $addAttr.on('click', e => {
+
+            let $first = $checkboxs.eq(0)
+            let preValue = $first.prop('checked')
+            console.log(preValue)
+            $first.prop('checked', true)
+            let oldValue = $first.prop('checked')
+            console.log(oldValue)
+
+            $first.removeProp('checked')
+        })
+    </script>
+    <br>
+    <div class="division">
+        <input name="jq-val" id="jq-val" />
+    </div>
+    <script>
+        debugger
+        $ipt = $('#jq-val')
+        $ipt.val([1,2,3])
+    </script>
+</body>
+</html>

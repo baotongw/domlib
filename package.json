@@ -1,0 +1,41 @@
+{
+  "name": "vacation_fe_lib",
+  "version": "0.0.1",
+  "description": "Vacation Frontend Lib And Widgets.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "rm -r -f dist/dev && export NODE_ENV=dev && gulp",
+    "prd": "rm -r -f dist/prd && export NODE_ENV=prd && gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.corp.qunar.com:fe/vacation_fe_lib.git"
+  },
+  "keywords": [
+    "widget",
+    "lib",
+    "tools",
+    "vacation"
+  ],
+  "author": "baotong.wang",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "babelify": "^7.3.0",
+    "browserify": "^14.4.0",
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-clean-css": "^3.7.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-htmlmin": "^3.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sourcemaps": "^2.6.1",
+    "gulp-uglify": "^3.0.0",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0"
+  }
+}

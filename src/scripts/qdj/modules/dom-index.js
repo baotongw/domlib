@@ -1,0 +1,5 @@
+require('./dom/dom-util')
+require('./dom/dom-class')
+require('./dom/dom-attr')
+require('./dom/dom-prop')
+require('./dom/dom-val')

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery Class Demo</title>
+    <style>
+        .hide {visibility: hidden;}
+        .division {margin-top: 10px; border-top: 1px dotted #666;}
+    </style>
+    <script src="../../vendor/jquery-3.2.1.js"></script>
+</head>
+<body>
+    <h1 id="ret"></h1>
+    <a href="javascript:;" id="trigger">点我</a>
+    <a href="javascript:;" id="clear">清除绑定</a>
+    <br>
+    <div class="division"></div>
+    <ul id="btns">
+        <li>
+            <a href="">可点击按钮1</a>
+        </li>
+        <li>
+            <a href="">可点击按钮2</a>
+        </li>
+    </ul>
+    <script>
+        let btn = document.getElementById('trigger')
+        let $btn = $('#trigger')
+        let $clear = $('#clear')
+        let ret = document.getElementById('ret')
+
+        // btn.addEventListener('click', e => {
+        //     ret.innerHTML += 'native event handler <br>'
+        // })
+
+        $btn.on('click', e => {
+            ret.innerHTML += 'jquery event handler <br>'
+        })
+        // off只能清除通过jquery绑定的事件
+        // $clear.on('click', e => {
+        //     debugger
+        //     $btn.off('click')
+        // })
+    </script>
+</body>
+</html>
